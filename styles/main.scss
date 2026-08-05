@@ -9,8 +9,9 @@
     --danger: #c2413b;
 }
 
-* {
-    box-sizing: border-box;
+@mixin focus-ring($color: rgba(37, 99, 235, 0.28), $offset: 2px) {
+    outline: 3px solid $color;
+    outline-offset: $offset;
 }
 
 body {
@@ -223,8 +224,7 @@ h1 {
 .input-group input:focus,
 .button:focus-visible,
 .letter-bank__button:focus-visible {
-    outline: 3px solid rgba(37, 99, 235, 0.28);
-    outline-offset: 2px;
+    @include focus-ring;
 }
 
 .input-group small {
