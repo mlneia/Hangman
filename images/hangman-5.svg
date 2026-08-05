@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 420" role="img" aria-labelledby="title desc">
+  <title id="title">Hangman gallows with one leg</title>
+  <desc id="desc">The fifth incorrect guess adds the figure's left leg.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M70 374H390" stroke="#E2AD42" stroke-width="18"/>
+    <path d="M124 368V50H326" stroke="#FFFDF8" stroke-width="15"/>
+    <path d="M124 111L184 51" stroke="#FFFDF8" stroke-width="11"/>
+    <path d="M325 51V93" stroke="#FFFDF8" stroke-width="9"/>
+    <circle cx="124" cy="368" r="7" fill="#D66A45" stroke="none"/>
+    <circle cx="326" cy="51" r="6" fill="#D66A45" stroke="none"/>
+    <circle cx="325" cy="126" r="33" stroke="#F6F1E7" stroke-width="9"/>
+    <circle cx="314" cy="120" r="3.5" fill="#E2AD42" stroke="none"/>
+    <circle cx="336" cy="120" r="3.5" fill="#E2AD42" stroke="none"/>
+    <path d="M315 139Q325 145 335 139" stroke="#E2AD42" stroke-width="4"/>
+    <path d="M325 160V264M322 183L269 228M328 183L381 228M322 262L276 330" stroke="#F6F1E7" stroke-width="11"/>
+  </g>
+</svg>
