@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple browser-based Hangman game.">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/game.js" defer></script>
+</head>
+<body>
+    <main class="game">
+        <header class="game__header">
+            <p class="label">Hangman</p>
+            <h1>Guess the word</h1>
+            <p>Use the hint and solve the word before you make six mistakes.</p>
+        </header>
+
+        <section class="game-card" aria-label="Hangman game">
+            <div class="game-card__visual">
+                <div class="attempts">
+                    <span>Incorrect guesses</span>
+                    <strong id="mistake-count">0 / 6</strong>
+                    <div
+                        class="attempts__dots"
+                        id="attempt-dots"
+                        aria-label="6 incorrect guesses remaining"
+                    ></div>
+                </div>
+
+                <div class="hangman-frame">
+                    <img
+                        id="hangman-image"
+                        src="images/hangman-0.svg"
+                        alt="Empty hangman gallows"
+                        width="460"
+                        height="420"
+                    >
+                </div>
+            </div>
+
+            <div class="game-card__play">
+                <div class="hint">
+                    <strong>Hint</strong>
+                    <p id="hint-text">Loading a new word...</p>
+                </div>
+
+                <div
+                    class="word"
+                    id="word-display"
+                    role="status"
+                    aria-label="Hidden word"
+                    aria-live="polite"
+                ></div>
+
+                <p class="feedback" id="feedback" aria-live="polite">
+                    Enter a letter to begin.
+                </p>
+
+                <form class="guess-form" id="guess-form" novalidate>
+                    <div class="input-group">
+                        <label for="letter-input">Guess a letter</label>
+                        <input
+                            id="letter-input"
+                            name="letter"
+                            type="text"
+                            maxlength="1"
+                            autocomplete="off"
+                            autocapitalize="characters"
+                            spellcheck="false"
+                            aria-describedby="input-help"
+                        >
+                        <small id="input-help">A-Z only</small>
+                    </div>
+                    <button class="button" id="guess-button" type="submit">Guess</button>
+                </form>
+
+                <div class="letter-bank">
+                    <p>Or choose a letter</p>
+                    <div
+                        class="letter-bank__grid"
+                        id="letter-bank"
+                        role="group"
+                        aria-label="Available letters"
+                    ></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div
+        class="result-modal"
+        id="result-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="result-title"
+        aria-describedby="result-message"
+        hidden
+    >
+        <div class="result-modal__panel">
+            <p class="label" id="result-label">Game complete</p>
+            <h2 id="result-title">You won!</h2>
+            <p id="result-message">You uncovered the word.</p>
+            <p class="result-modal__word" id="result-word"></p>
+            <span class="result-modal__badge" id="result-badge" aria-hidden="true">WIN</span>
+            <button class="button" id="play-again-button" type="button">Play again</button>
+        </div>
+    </div>
+</body>
+</html>
